@@ -1,0 +1,313 @@
+<mat-toolbar [class.mobile-sidenav-hidden]="!mobileQuery.matches" class="mobile-sidenav-toolbar">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 class="app-name">Volodymyr Kovtun</h1>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="true" [fixedTopGap]="mobileQuery.matches ? 56 : 0">
+    <nav class="navbar navbar-expand-lg navbar-dark dark-blue-bg transparent-bg sideNav">
+      <a class="navbar-brand" href="#page-top">
+        <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+            src="assets/img/me.jpg" alt="" /></span>
+      </a>
+      <div class="navbar-collapse">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about" [ngClass]="{'active': selectedSection === 'about'}"
+              (click)="navLinkOnClick(sidenav, 'about')">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience"
+              [ngClass]="{'active': selectedSection === 'experience'}"
+              (click)="navLinkOnClick(sidenav, 'experience')">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education"
+              [ngClass]="{'active': selectedSection === 'education'}"
+              (click)="navLinkOnClick(sidenav, 'education')">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates"
+              [ngClass]="{'active': selectedSection === 'certificates'}"
+              (click)="navLinkOnClick(sidenav, 'certificates')">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" [ngClass]="{'active': selectedSection === 'skills'}"
+              (click)="navLinkOnClick(sidenav, 'skills')">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#interests"
+              [ngClass]="{'active': selectedSection === 'interests'}"
+              (click)="navLinkOnClick(sidenav, 'interests')">Interests</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects"
+              [ngClass]="{'active': selectedSection === 'projects'}"
+              (click)="navLinkOnClick(sidenav, 'projects')">Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="container-fluid p-0">
+      <section #aboutSection class="resume-section" id="about">
+        <div class="resume-section-content">
+          <h1 class="mb-0">
+            Volodymyr
+            <span class="dark-blue-text">Kovtun</span>
+          </h1>
+          <div class="subheading mb-5">
+            5180 Yonge Street · North York · ON M2N 0K5 · (437) 992-5595 ·
+            <a href="mailto:vladimirvkovtun@gmail.com">vladimirvkovtun@gmail.com</a>
+          </div>
+          <p class="lead mb-5">Experienced software developer adept in full-stack development with extensive experience in
+            the installation, testing, deployment and maintenance of software systems. Agile problem solver with a
+            previous experience of front-end development. Able to effectively collaborate as part of a productive team,
+            as
+            well as self-manage during independent projects.</p>
+          <div class="social-icons">
+            <a class="social-icon" href="https://vk.com/vladimir.kovtun"><i class="fab fa-vk"></i></a>
+            <a class="social-icon" href="https://www.facebook.com/profile.php?id=100014193312637"><i
+                class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section #experienceSection class="resume-section" id="experience">
+        <div class="resume-section-content">
+          <h2 class="mb-5">Experience</h2>
+          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+              <h3 class="mb-0">Full Stack Developer</h3>
+              <div class="subheading mb-3">CGI</div>
+              <p>Working on upgrading a monolithic Mutual Funds application by breaking it into microservices. Leading
+                the
+                development team for using new version-control repository. Reviewed test plans, project plans, and
+                specifications. Developed automated Jenkins pipeline. Introduced unit testing to the project by using
+                JUnit framework for back-end application and Jasmine & Karma for Angular front-end. Maintaining newly
+                developed and legacy systems application using Bitbucket. Mentoring and couching newly hired team
+                members to
+                the business-critical application resulting in decreasing of onboarding time.
+              </p>
+              <ul>
+                <li>Migrating a monolithic system to an ecosystem of microservices using spring framework</li>
+                <li>Engineered batch application that processes a large chunk of data in a background using
+                  Spring Batch framework</li>
+                <li>Developed Event Brokering application to transfer events between producer and consumer
+                  using Solace, Docker, Spring Boot and JMS</li>
+                <li>Designed and developed dozens of CI/CD pipelines for the services</li>
+                <li>Developed user interface for new microservices using Angular 6 framework</li>
+                <li>Developed unit testing for new and existing projects</li>
+                <li>Supporting AngularJS user interface for services</li>
+                <li>Supporting existing SOAP services</li>
+              </ul>
+            </div>
+            <div class="flex-shrink-0">January 2018 - Present</div>
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+              <h3 class="mb-0">Java Developer Intern</h3>
+              <div class="subheading mb-3">CGI</div>
+              <p>Engineered an automated process that configures and monitors cron jobs on a Linux servers using Java,
+                JSF, Shell Script and MySql. Helped different internal teams to automate manual day-to-day processes.
+                Resolved technical problems relating to the internal application resulting in application performance
+                tunning and code quality improvements.</p>
+            </div>
+            <div class="flex-shrink-0">September 2017 - December 2017</div>
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+              <h3 class="mb-0">Junior software developer</h3>
+              <div class="subheading mb-3">MTZ APK</div>
+              <p>Assisted in development, testing, and deploying new features of the application from the development to
+                the production rollout stages. Resolved technical problems relating to the business-critical internal
+                application resulting in application performance tunning and code quality improvements. Maintained and
+                enhanced JUnit test cases for the application business logic. Improved efficiency and effectiveness of
+                coding practices conducted for the application maintaining code and design consistency across different
+                team
+                members.
+              </p>
+              <ul>
+                <li>Worked with different technologies such as JAVA and AngularJS</li>
+                <li>Participated with senior engineers to analyze production problems and the root cause of
+                  them as well as working on solutions</li>
+                <li>Maintained JAVA monolith application by fixing production defects</li>
+                <li>Troubleshoot and analyzed problem reports to help determine root cause of the reported
+                  issue</li>
+              </ul>
+            </div>
+            <div class="flex-shrink-0">September 2014 - August 2016</div>
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div class="flex-grow-1">
+              <h3 class="mb-0">Software developer intern</h3>
+              <div class="subheading mb-3">MTZ APK</div>
+              <p>Engineered an automated reminder tool using JAVA. Maintained newly developed and legacy systems
+                application
+                using SVN. Profiled, troubleshoot, and fix bugs for a critical online service that helped tune system
+                performance and reduce average response time. Created intern onboarding documentation for new hires.</p>
+            </div>
+            <div class="flex-shrink-0">June 2014 - August 2014</div>
+          </div>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section #educationSection class="resume-section" id="education">
+        <div class="resume-section-content">
+          <h2 class="mb-5">Education</h2>
+          <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div class="flex-grow-1">
+              <h3 class="mb-0">Seneca College</h3>
+              <div class="subheading mb-3">Postgraduate Certificate</div>
+              <div>Program Subject Area: Project Management - Information Technology</div>
+              <p>Graduated with distinction</p>
+            </div>
+            <div class="flex-shrink-0">January 2017 — January 2018</div>
+          </div>
+          <br>
+          <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+              <h3 class="mb-0">National Technical University of Ukraine - Kyiv Polytechnic Institute</h3>
+              <div class="subheading mb-3">Bachelor's Degree</div>
+              <div>Program Subject Area: System Engineering</div>
+            </div>
+            <div class="flex-shrink-0">September 2012 — July 2016</div>
+          </div>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section #certificatesSection class="resume-section" id="certificates">
+        <div class="resume-section-content">
+          <h2 class="mb-5">COURSES & CERTIFICATIONS</h2>
+          <h3 class="mb-5">Certifications</h3>
+          <ul class="fa-ul mb-0">
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              <a class="certificate-link"
+                (click)="openDialog('/assets/img/certificates/data_structure_and_perfomance.pdf')">Data Structures
+                and
+                Performance</a>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              <a class="certificate-link"
+                (click)="openDialog('/assets/img/certificates/web_application_dev_javascript_and_mongo.pdf')">
+                Web Application Development with JavaScript and MongoDB</a>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              <a class="certificate-link" (click)="openDialog('/assets/img/certificates/responsive_web_design.pdf')">
+                Responsive Web Design</a>
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              <a class="certificate-link"
+                (click)="openDialog('/assets/img/certificates/responsive_website_basics.pdf')">
+                Responsive Website Basics: Code with HTML, CSS, and JavaScript</a>
+            </li>
+            <li>
+          </ul>
+          <br>
+          <h3 class="mb-5">Online Courses</h3>
+          <ul class="fa-ul mb-0">
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              Managing Apps on Kubernetes with Istio
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              Getting Started with Kubernetes
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              Responsive Web Design
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
+              Python: The Big Picture
+            </li>
+            <li>
+          </ul>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section #skillsSection class="resume-section" id="skills">
+        <div class="resume-section-content">
+          <h2 class="mb-5">Skills</h2>
+          <div class="subheading mb-3">Front-End Programming Languages & Frameworks</div>
+          <ul class="list-inline dev-icons">
+            <li class="list-inline-item"><i class="fab fa-angular"></i></li>
+            <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+            <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+            <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+            <li class="list-inline-item"><i class="fab fa-sass"></i></li>
+            <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
+            <li class="list-inline-item"><i class="fab fa-npm"></i></li>
+          </ul>
+          <div class="subheading mb-3">Back-End Programming Languages & Frameworks</div>
+          <ul class="list-inline dev-icons">
+            <li class="list-inline-item"><i class="fab fa-java"></i></li>
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/spring.ico" ></i> </li>
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/spring-boot.ico" ></i> </li>
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/spring-batch.ico" ></i> </li>
+            <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/csharp.ico" ></i> </li>
+          </ul>
+          <div class="subheading mb-3">Testing Frameworks</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <span class="fa-li"><i class="fas fa-check"></i></span>
+              JUnit
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check"></i></span>
+              Mockito & PowerMock
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check"></i></span>
+              Jasmine
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-check"></i></span>
+              Karma
+            </li>
+          </ul>
+          <br>
+          <div class="subheading mb-3">Databases</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <span class="fa-li"><i class="fas fa-database"></i></span>
+              Oracle
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-database"></i></span>
+              DB2
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-database"></i></span>
+              MySQL
+            </li>
+            <li>
+              <span class="fa-li"><i class="fas fa-database"></i></span>
+              MongoDB
+            </li>
+          </ul>
+          <br>
+          <div class="subheading mb-3">DevOps</div>
+          <ul class="list-inline dev-icons">
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/jenkins.ico" ></i> </li>
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/docker.ico" ></i> </li>
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/kubernetes.ico" ></i> </li>
+            <li class="list-inline-item"><i><img class="custom-icons" src="assets/icons/istio.ico" ></i> </li>
+          </ul>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section #interestsSection class="resume-section" id="interests">
+        <div class="resume-section-content">
+          <h2 class="mb-3">Interests</h2>
+          <p>Apart from being a software developer, I enjoy spending time with my friends. Board games, team sports events, video games, or just spending time together - It doesn't matter where you are, but who you're with that really matters.</p>
+          <p class="mb-3">Between working and spending time with friends, I like to devote time to self-development. Exploring the world, learning new technologies, training physical and mental health is an essential part of my day-to-day life. As a technical guy, I spend a lot of my time exploring the latest technological advancements in the development world.</p>
+          <p class="mb-0">And if I want to take a break and relax, I love watching sci-fi and historical genre movies and television shows or reading books of the same genres.</p>
+        </div>
+      </section>
+      <mat-divider></mat-divider>
+      <section #projectsSection class="resume-section" id="projects">
+        <div class="resume-section-content">
+          <h2 class="mb-5">Projects</h2>
+          
+        </div>
+      </section>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

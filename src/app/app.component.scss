@@ -1,0 +1,27 @@
+.certificate-link {
+    text-decoration: underline;
+}
+
+.certificate-link:hover {
+    cursor: pointer;
+}
+
+.mobile-sidenav-hidden {
+    visibility: hidden;
+}
+
+.mobile-sidenav-toolbar {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+
+h1.app-name {
+    margin-left: 8px;
+}
+
+.custom-icons {
+    max-width: 65px;
+    max-height: 65px;
+    padding-bottom: 10px;
+}
