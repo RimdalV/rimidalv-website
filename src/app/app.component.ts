@@ -32,7 +32,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   public projectsOffset: Number = null;
 
   constructor(public dialog: MatDialog, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 768px)');
+    this.mobileQuery = media.matchMedia('(max-width: 992px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
